@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { generalGuidelines, muscleGroupExercises, exerciseDB } from '../context/workoutData';
 import Anatomy3D from '../components/Anatomy3D';

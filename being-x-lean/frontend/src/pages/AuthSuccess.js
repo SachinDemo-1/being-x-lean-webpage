@@ -24,7 +24,7 @@ export default function AuthSuccess() {
     } else {
       navigate('/auth');
     }
-  }, []);
+  }, [navigate, params, setUser]);
 
   return (
     <div style={{
