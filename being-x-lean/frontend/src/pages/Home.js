@@ -589,6 +589,37 @@ function BackBody({ onHover, onClickMuscle, hoveredGroup }) {
   );
 }
 
+function Anatomy3D({ onMuscleClick }) {
+  const [isFront, setIsFront] = useState(true);
+  const [hoveredGroup, setHoveredGroup] = useState(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFront(prev => !prev);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="anatomy-3d-wrapper">
+      {isFront ? (
+        <FrontBody
+          onHover={setHoveredGroup}
+          hoveredGroup={hoveredGroup}
+          onClickMuscle={onMuscleClick}
+        />
+      ) : (
+        <BackBody
+          onHover={setHoveredGroup}
+          hoveredGroup={hoveredGroup}
+          onClickMuscle={onMuscleClick}
+        />
+      )}
+    </div>
+  );
+}
+
 // ─── MUSCLE MODAL ────────────────────────────────────────────────────────────
 function MuscleModal({ muscleGroup, onClose }) {
   const data = muscleGroupExercises[muscleGroup];
