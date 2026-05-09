@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'https://being-x-lean-webpage-ula7-git-main-sachindemo-1s-projects.vercel.app/',
+  origin: process.env.CLIENT_URL || 'https://being-x-lean-webpage-ula7-git-main-sachindemo-1s-projects.vercel.app',
   credentials: true
 }));
 app.use(express.json());
